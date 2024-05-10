@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dictionnaire/Traduction</title>
+    <link rel="stylesheet" href="buton.css">
+    <link rel="stylesheet" href="icons.css">
+    <link rel="stylesheet" href="Collapsable.css">
+    <link rel="stylesheet" href="image.css">
+    <link rel="stylesheet" href="titles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+<body>
+    <nav class="navbar">
+        <ul class="nav-list">
+            <li><a href="#home"><i class="fas fa-home"></i> Accueil</a></li>
+            <li><a href="#traduction"><i class="fas fa-american-sign-language-interpreting"></i> Traduction</a></li>
+            <li><a href="#ressources"><i class="fas fa-university"></i> Ressources</a></li>
+            <li><a href="#about"><i class="fa fa-info-circle"></i> About Us</a></li>
+        </ul>
+    </nav>
+    <div class="centrepage">
+        <div class="content">
+            <h2>Dictionnaire/Traduction</h2>
+            <p>Expand and collapse sections for easy navigation.</p>
+        </div>
+    </div>
+    
+    <div class="collapsible">
+        <button class="collapsible-btn">Definition/Traduction
+            <i class="fas fa-chevron-circle-down"></i>
+        </button>
+        
+        <div class="collapsible-content">
+        <form>
+            <div class="input-section">
+                <label for="word">Le Mot:</label>
+                <input type="text" id="word">
+                <ul id="suggestions"></ul>
+            </div>
+            <label class="container">Definition
+                <input type="radio" checked="checked" name="radio" value="DefinitionVid">
+                <span class="checkmark"></span>
+            </label>
+            <label class="container">Traduction
+                <input type="radio"  name="radio" value="TraductionVid">
+                <span class="checkmark"></span>
+            </label>
+            <div  class="video-section">
+                <label for="lsq-video">Definition/Traduction en LSQ:</label>
+                <div id="video">
+                    <div id="loader"></div>
+                </div>
+                <div id="video-container"></div>
+            </div>
+        </form>
+            <div class="button">
+                <button type="submit" id="define-button" onclick="searchLSQVideo()">Définir</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="collapsible">
+        <button class="collapsible-btn">Ajouter un mot
+            <i class="fas fa-chevron-circle-down"></i>
+        </button>
+        <div class="collapsible-content">
+            <div class="input-section">
+                <label for="lsq-word">Le Mot:</label>
+                <input type="text" id="lsq-word">
+            </div>
+            <label class="container">Definition
+                <input type="radio" onclick="radioDef()" name="radio" value="Definition">
+                <span class="checkmark"></span>
+            </label>
+            <label class="container">Traduction
+                <input type="radio" checked="checked" onclick="radioTrad()"  name="radio" value="Traduction">
+                <span class="checkmark"></span>
+            </label>
+            <select id="Dropdown" onchange="checkSelection()">
+                <option value="0">Select an option:</option>
+                <option value="def" id="definition_op" style="display: none;">Defintion</option>
+                <option value="lin">Link</option>
+                <option value="up">Upload</option>
+                
+            </select>
+            
+            <div class="input-section" id="Definition" style="display: none;">
+                <label for="definition">Definition:</label>
+                <input type="text" id="definition">
+            </div>
+
+            <div class="input-section" id="Link" style="display: none;">
+                <label for="lsq-entry">Video link:</label>
+                <input type="text" id="lsq-entry">
+            </div>
+            
+            
+            <div class="input-section" id="Upload" style="display: none;">
+                <label for="video-upload">Upload Video:</label>
+                <input type="file" id="video-upload" accept="video/*">
+            </div>
+            <div class="button">
+                <button type="button" id="add-word-button">Ajouter</button>
+            </div> 
+            
+        </div>
+    </div>
+    
+    <script src="https://www.gstatic.com/firebasejs/10.6.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.6.0/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.6.0/firebase-storage.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/7.14.1/firebase.js"></script>
+    
+    <script src="https://www.youtube.com/iframe_api"></script>
+
+    <script src="Javascript.js"></script>
+</body>

@@ -1,0 +1,81 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    scroll-behavior: smooth;
+}
+
+.collapsible {
+    border: 1px solid #ccc;
+    margin: 50px;
+    border-radius: 50px;
+}
+
+.collapsible-btn {
+    background-color: #49689b;
+    color: white;
+    cursor: pointer;
+    padding: 20px;
+    width: 100%;
+    text-align: center;
+    font-size: 1.5em;
+    border-radius: 50px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.collapsible-content {
+    display: none;
+    justify-content: center;
+    padding: 50px;
+}
+
+.input-section {
+    margin-bottom: 10px;
+}
+
+#video{
+    display: flex;
+    justify-content: center;
+    width: 560px;
+    height: 315px;
+    background-color: black;
+}
+
+.video-section {
+    display: flex;
+    flex-direction: column;
+    width: 560px;
+    height: 315px;
+}
+
+label {
+    font-weight: bold;
+    color: darkblue;
+}
+
+input {
+    width: 100%;
+}
+
+#loader {
+    display: none;
+    border: 16px solid #f3f3f3;
+    border-radius: 50%;
+    border-top: 16px solid #3498db;
+    width: 120px;
+    height: 120px;
+    -webkit-animation: spin 2s linear infinite; 
+    animation: spin 2s linear infinite;
+  }
+  
+  
+  @-webkit-keyframes spin {
+    0% { -webkit-transform: rotate(0deg); }
+    100% { -webkit-transform: rotate(360deg); }
+  }
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }

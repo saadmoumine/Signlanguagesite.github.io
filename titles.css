@@ -1,0 +1,19 @@
+.centrepage {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 50px;
+}
+
+.content {
+    text-align: center;
+}
+
+.content h2 {
+    font-size: 2em; 
+    margin-bottom: 10px; 
+}
+
+.content p {
+    font-size: 1.2em; 
+}
